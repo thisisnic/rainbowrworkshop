@@ -6,6 +6,8 @@ editor: source
 
 by Nic Crane
 
+**Wednesday 25th February 2026, 19:00-21:00 UTC / 14:00-16:00 ET / 11:00-13:00 PT**
+
 ------------------------------------------------------------------------
 
 ### Workshop Overview
@@ -34,7 +36,7 @@ If you're on a work machine with restrictions on installing software or connecti
 Install the required packages:
 
 ```r
-install.packages(c("ellmer", "dplyr", "readr", "tidyr", "usethis"))
+install.packages(c("ellmer", "mall", "dplyr", "readr", "tidyr", "usethis"))
 ```
 
 #### API keys

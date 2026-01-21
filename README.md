@@ -32,7 +32,7 @@ This runs R entirely in your browser. Your API key stays in your cloud project, 
 **1. Install R packages**
 
 ```r
-install.packages(c("ellmer", "dplyr", "readr", "tidyr", "usethis"))
+install.packages(c("ellmer", "mall", "dplyr", "readr", "tidyr", "usethis"))
 ```
 
 **2. Get an API key**
