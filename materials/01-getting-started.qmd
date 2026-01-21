@@ -1,0 +1,9 @@
+---
+title: "Section 1: Getting Started with LLMs in R"
+format: html
+execute:
+  eval: false
+  echo: true
+---
+
+TODO: Add content

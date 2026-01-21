@@ -1,0 +1,9 @@
+---
+title: "Section 4: Tool Calling"
+format: html
+execute:
+  eval: false
+  echo: true
+---
+
+TODO: Add content
