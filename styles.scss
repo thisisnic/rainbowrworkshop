@@ -1,0 +1,81 @@
+/*-- scss:defaults --*/
+
+// Rainbow-inspired color palette
+$purple: #7B68EE;
+$pink: #FF69B4;
+$red: #E63946;
+$orange: #F4A261;
+$yellow: #F4D35E;
+$green: #2A9D8F;
+$blue: #457B9D;
+
+// Theme colors
+$primary: $purple;
+$link-color: $purple;
+
+// Navbar
+$navbar-bg: #2D2D2D;
+$navbar-fg: #FFFFFF;
+
+/*-- scss:rules --*/
+
+// Rainbow gradient accent on top of page
+body {
+  border-top: 4px solid;
+  border-image: linear-gradient(
+    to right,
+    #E63946,
+    #F4A261,
+    #F4D35E,
+    #2A9D8F,
+    #457B9D,
+    #7B68EE,
+    #FF69B4
+  ) 1;
+}
+
+// Style links
+a {
+  color: $purple;
+
+  &:hover {
+    color: $pink;
+  }
+}
+
+// Navbar styling
+.navbar {
+  background: linear-gradient(
+    to right,
+    #2D2D2D,
+    #3D3D3D
+  ) !important;
+}
+
+// Code blocks
+pre.sourceCode {
+  border-left: 3px solid $purple;
+}
+
+// Headings
+h1, h2, h3 {
+  color: #2D2D2D;
+}
+
+h1 {
+  border-bottom: 2px solid $purple;
+  padding-bottom: 0.3em;
+}
+
+// Callout boxes (for exercises/solutions)
+.callout-tip {
+  border-left-color: $green !important;
+}
+
+.callout-warning {
+  border-left-color: $orange !important;
+}
+
+.callout-note {
+  border-left-color: $blue !important;
+}
