@@ -19,26 +19,26 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Slides
-        menu:
-        - text: "0. Welcome and Setup"
-          href: materials/00-welcome-setup.qmd
-          target: "_blank"
-        - text: "1. Getting Started with LLMs in R"
-          href: materials/01-getting-started.qmd
-          target: "_blank"
-        - text: "2. Prompt Engineering"
-          href: materials/02-prompt-engineering.qmd
-          target: "_blank"
-        - text: "3. Structured Output"
-          href: materials/03-structured-output.qmd
-          target: "_blank"
-        - text: "4. Tool Calling"
-          href: materials/04-tool-calling.qmd
-          target: "_blank"
-        - text: "5. Wrap-up and Resources"
-          href: materials/05-wrapup-resources.qmd
-          target: "_blank"
+      # - text: Slides
+      #   menu:
+      #   - text: "0. Welcome and Setup"
+      #     href: materials/00-welcome-setup.qmd
+      #     target: "_blank"
+      #   - text: "1. Getting Started with LLMs in R"
+      #     href: materials/01-getting-started.qmd
+      #     target: "_blank"
+      #   - text: "2. Prompt Engineering"
+      #     href: materials/02-prompt-engineering.qmd
+      #     target: "_blank"
+      #   - text: "3. Structured Output"
+      #     href: materials/03-structured-output.qmd
+      #     target: "_blank"
+      #   - text: "4. Tool Calling"
+      #     href: materials/04-tool-calling.qmd
+      #     target: "_blank"
+      #   - text: "5. Wrap-up and Resources"
+      #     href: materials/05-wrapup-resources.qmd
+      #     target: "_blank"
 
 format:
   html:
