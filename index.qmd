@@ -45,6 +45,8 @@ You'll need an API key from an LLM provider. We recommend **Gemini** (free), but
 
 **Option 1: Gemini (free)**
 
+{{< video https://vimeo.com/1163332672 >}}
+
 1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
 2. Sign in with your Google account
 3. Click "Create API key"
