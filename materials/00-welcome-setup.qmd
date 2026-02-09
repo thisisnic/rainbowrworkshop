@@ -6,4 +6,6 @@ execute:
   echo: true
 ---
 
-TODO: Add content
+## Getting a Google Gemini API Key
+
+{{< video https://vimeo.com/1163332672 >}}
