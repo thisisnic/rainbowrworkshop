@@ -29,10 +29,7 @@ All the code and exercises for the workshop can be found below.
 
 ## 3 - Getting Started with LLMs in R
 
-```{r}
-#| eval: false
-#| echo: true
-
+```r
 ## Editing your .Renviron
 
 usethis::edit_r_environ()
@@ -100,10 +97,7 @@ chat$chat("what date is it right now?")
 3.  Ask what the most popular LGBT movie was in 1995 and then 2026
 
 ## 4 - Prompt Engineering
-```{r}
-#| eval: false
-#| echo: true
-
+```r
 ## Load the data to work with
 
 library(tidyverse)
@@ -277,10 +271,7 @@ chat$chat("Summarise the movie: ", pride_synopsis)
 
 ## 5 - Extracting Structured Data
 
-```{r}
-#| eval: false
-#| echo: true
-
+```r
 ## The problem with unstructured output
 
 chat <- chat_openrouter(model = "google/gemini-2.5-flash")
@@ -388,12 +379,9 @@ readr::write_csv("./data/movies_with_genres.csv")
 3. Process all movies using `parallel_chat_structured()`
 4. **Bonus:** Add a new field for the movie's tone using `type_enum()` with choices like "Uplifting", "Dark", "Comedic", "Bittersweet"
 
-## 6 - Tool Calling 
+## 6 - Tool Calling
 
-```{r}
-#| eval: false
-#| echo: true
-
+```r
 ## Initialise a chat and register the tool
 
 prompt <- "You are a movie recommender bot designed to help users 
