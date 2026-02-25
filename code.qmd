@@ -473,3 +473,9 @@ live_console(chat)
 ### Your turn
 
 1. Try using the tool and ask different questions and see if you can get them LLM to call it repeatedly
+
+## Wrapping up
+
+Thanks so much for coming along!  Please fill in the workshop feedback: <https://forms.gle/LG3VH2o5qcNBp6aLA>
+
+If you want to learn more about using LLMs in R, I've started a newsletter: <https://aifordatapeople.beehiiv.com/>
