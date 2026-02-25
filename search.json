@@ -42,6 +42,13 @@
     "text": "6 - Tool Calling\n## Initialise a chat and register the tool\n\nprompt &lt;- \"You are a movie recommender bot designed to help users \npick potential films to add to their watch list. Sample a\nrandom film and give the user a 20 word summary of it.\"\n\nchat &lt;- chat_openrouter(\n  model = \"google/gemini-2.5-flash\",\n  system_prompt = prompt\n)\n\n\n\n\n\n## Use the tool!\n\nchat$chat(\"What movie should I watch this weekend?\")\n\n\n\n\n\n## Update the function to filter the data\n\nmovie_genres &lt;- c(\n  \"Action\", \"Comedy\", \"Drama\", \"Horror\",\n  \"Science Fiction\", \"Thriller\", \"Romance\",\n  \"Fantasy\", \"Adventure\", \"Documentary\"\n)\n\nsample_and_filter_movies &lt;- function(genre_choice = movie_genres) {\n  read.csv(\"data/movies_with_genres.csv\") |&gt;\n    filter(genre %in% genre_choice) |&gt;\n    slice_sample(n = 1)  \n}\n\n\n\n\n\n## Define tool using updated function\n\nsample_and_filter_movies_tool &lt;- tool(\n  sample_and_filter_movies,\n  description = \"Randomly sample a movie from the dataset\",\n  arguments = list(\n    genre_choice = type_array(\n      type_enum(\n        values = movie_genres,\n        \"Movie genres to choose from\"\n      )\n    )\n  )\n)\n\n\n\n\n\n## Register the updated tool\n\nprompt &lt;- \"You are a movie recommender bot designed to help users \npick potential films to add to their watch list. Sample a\nrandom film and give the user a 20 word summary of it. \n\"\n\nchat &lt;- chat_openrouter(\n  model = \"google/gemini-2.5-flash\",\n  system_prompt = prompt\n)\n\nchat$register_tool(sample_and_filter_movies_tool)\n\n\n\n\n\n## Ask the question\n\nlive_console(chat)\n\n# What movie should I watch tonight? I like scifi!\n\n\nYour turn\n\nTry using the tool and ask different questions and see if you can get them LLM to call it repeatedly"
   },
   {
+    "objectID": "code.html#wrapping-up",
+    "href": "code.html#wrapping-up",
+    "title": "Code",
+    "section": "Wrapping up",
+    "text": "Wrapping up\nThanks so much for coming along! Please fill in the workshop feedback: https://forms.gle/LG3VH2o5qcNBp6aLA\nIf you want to learn more about using LLMs in R, I’ve started a newsletter: https://aifordatapeople.beehiiv.com/"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "LLMs in R for Data Analysis",
