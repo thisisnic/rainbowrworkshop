@@ -5,7 +5,7 @@ subtitle: rainbowR Conference Workshop
 
 # Setup
 
-If you are not working in Posit Cloud, or you do not have the `data/` directory showoing up in Posit Cloud, you can download them by running:
+If you are not working in Posit Cloud, or you do not have the `data/` directory showing up in Posit Cloud, you can download them by running:
 
 ```r
 # Download workshop materials (slides + data)
