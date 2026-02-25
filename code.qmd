@@ -88,6 +88,7 @@ chat$chat("What were we saying earlier?")
 ## Training cutoff date
 
 chat$chat("what date is it right now?")
+chat$chat("Are you sure about that?")
 ```
 
 ### Your Turn
@@ -138,6 +139,7 @@ chat <- chat_openrouter(
   system_prompt = "Respond in 35 words or fewer"
 )
 chat$chat("Summarise this movie:", pride_synopsis)
+chat$chat("tell me every character and what they do")
 
 
 
@@ -327,6 +329,15 @@ chat$chat_structured(pride_synopsis, type = genre_type)
 
 
 
+## Extracting text
+
+location_type <- type_array(type_string("locations of the movie"))
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat_structured(pride_synopsis, type = location_type)
+
+
+
 
 
 ## Combining multiple fields
@@ -349,6 +360,8 @@ chat$chat_structured(pride_synopsis, type = movie_info_type)
 ## Processing multiple movies
 
 prompts <- paste("Extract data from this movie synopsis:", movies$synopsis)
+
+prompts
 
 # parallel_chat_structured is a little different
 output <- parallel_chat_structured(
@@ -382,6 +395,26 @@ readr::write_csv("./data/movies_with_genres.csv")
 ## 6 - Tool Calling
 
 ```r
+# Define the function
+sample_movies <- function() {
+  read.csv("data/movies_with_genres.csv") |>
+    slice_sample(n = 1)
+}
+
+
+
+
+
+# Create tool
+sample_movies_tool <- tool(
+  sample_movies,
+  description = "Randomly sample a movie from the dataset"
+)
+
+
+
+
+
 ## Initialise a chat and register the tool
 
 prompt <- "You are a movie recommender bot designed to help users 
@@ -393,6 +426,7 @@ chat <- chat_openrouter(
   system_prompt = prompt
 )
 
+chat$register_tool(sample_movies_tool)
 
 
 
