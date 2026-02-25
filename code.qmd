@@ -1,0 +1,467 @@
+---
+title: Code
+subtitle: rainbowR Conference Workshop
+---
+
+# Code
+
+All the code and exercises for the workshop can be found below.
+
+## 3 - Getting Started with LLMs in R
+
+```{r}
+#| eval: false
+#| echo: true
+
+## Editing your .Renviron
+
+usethis::edit_r_environ()
+
+
+
+
+
+## Starting a conversation
+
+library(ellmer)
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+
+
+
+
+
+## Sending a message to the LLM
+
+library(ellmer)
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat("What is the most popular LGBT movie of all time? 
+  Answer succinctly.")
+
+
+
+
+
+## Turns
+
+chat
+
+
+
+
+
+## Continuing the conversation
+
+chat$chat("Who were the stars of that movie?")
+chat$chat("What year was it released?")
+chat
+
+
+
+
+
+## Reset - just start a new chat
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat("What were we saying earlier?")
+
+
+
+
+
+## Training cutoff date
+
+chat$chat("what date is it right now?")
+```
+
+### Your Turn
+
+1.  Set up your API key using `usethis::edit_r_environ()` + restart R
+2.  Start a conversation: `chat_openrouter(model = "google/gemini-2.5-flash")`
+3.  Ask what the most popular LGBT movie was in 1995 and then 2026
+
+## 4 - Prompt Engineering
+```{r}
+#| eval: false
+#| echo: true
+
+## Load the data to work with
+
+library(tidyverse)
+movies <- read_csv("data/movies.csv")
+
+pride_synopsis <- movies |>
+  filter(title == "Pride") |>
+  pull(synopsis)
+
+pride_synopsis
+
+
+
+
+
+## Ask questions
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat("What year was this movie set in?", pride_synopsis)
+
+
+
+
+
+## The LLM is very chatty!
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat("Summarise this movie:", pride_synopsis)
+
+
+
+
+
+## Setting the system prompt
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = "Respond in 35 words or fewer"
+)
+chat$chat("Summarise this movie:", pride_synopsis)
+
+
+
+
+
+## Run it again though...responses vary
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = "Respond in 35 words or fewer"
+)
+chat$chat("Summarise this movie:", pride_synopsis)
+
+
+
+
+
+## 1. Define a role - prompt
+
+prompt <- "You are a movie summariser whose job is to sum up the
+genre and themes of movies to help users decide if they want to watch.
+Respond in 50 words or fewer"
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+chat$chat("Summarise the movie: ", pride_synopsis)
+
+# if we run it again we get different output
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+chat$chat("Summarise the movie: ", pride_synopsis)
+
+
+
+
+##  2 - Defining the output format - prompt
+
+prompt <- "You are a movie summariser whose job is to sum up the 
+genre and themes of movies to help users decide if they want to watch.
+Respond in 50 words or fewer
+
+## Output format
+
+Plot outline: a 1 sentence description
+
+Genre: movie genre
+
+Setting: time and place 
+"
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+
+chat$chat("Summarise the movie: ", pride_synopsis)
+
+
+
+
+
+## 3 - Getting more specific - prompt
+
+prompt <- "You are a movie summariser whose job is to sum up the 
+genre and themes of movies to help users decide if they want to watch.
+Respond in 50 words or fewer
+
+## Output format
+
+Plot outline: a 1 sentence description
+
+Genre: movie genre (see choices below)
+
+Setting: time and place 
+
+## Choices
+
+Possible movie genres to choose from: Action, Comedy, Drama,  
+Horror, Science, Fiction, Thriller, Romance, Fantasy, Adventure, Documentary
+"
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+
+chat$chat("Summarise the movie: ", pride_synopsis)
+
+
+
+
+
+## 4 - Iterate - be more strongly worded - prompt
+
+prompt <- "You are a movie summariser whose job is to sum up the 
+genre and themes of movies to help users decide if they want to watch.
+Respond in 50 words or fewer
+
+## Output format
+
+Plot outline: a 1 sentence description
+
+Genre: movie genre (see choices below)
+
+Setting: time and place 
+
+## Choices
+
+You MUST only choose genres that appear on this list: Action, Comedy, 
+Drama,  Horror, Science, Fiction, Thriller, Romance, Fantasy, Adventure, 
+Documentary"
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+
+chat$chat("Summarise the movie: ", pride_synopsis)
+```
+
+### Your turn
+
+1. Pick a different movie from the movie dataset and run the "best" version of the prompt on it
+2. Update the prompt to also extract information about the movie's themes
+3. See if you can update it to show what **you** would want to see in a summary
+
+
+## 5 - Extracting Structured Data
+
+```{r}
+#| eval: false
+#| echo: true
+
+## The problem with unstructured output
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+output <- chat$chat(
+  "Extract year and location from this data
+  
+  ## Output format
+  
+  Year: 
+  Location",
+  pride_synopsis
+)
+output
+class(output)
+
+
+
+
+## Extracting a single value
+
+year_type <- type_integer("Year the movie is set in")
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat_structured(pride_synopsis, type = year_type)
+
+
+
+
+
+## Extracting text
+
+location_type <- type_string("Primary location of the movie")
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat_structured(pride_synopsis, type = location_type)
+
+
+
+
+
+## Constraining to specific choices
+
+movie_genres <- c(
+  "Action", "Comedy", "Drama", "Horror",
+  "Science Fiction", "Thriller", "Romance",
+  "Fantasy", "Adventure", "Documentary"
+)
+
+genre_type <- type_enum(movie_genres, "The genre of the movie")
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat_structured(pride_synopsis, type = genre_type)
+
+
+
+
+
+## Combining multiple fields
+
+year_type <- type_integer("Year the movie is set in")
+genre_type <- type_enum(movie_genres, "The genre of the movie")
+
+movie_info_type <- type_object(
+  year_set = year_type,
+  genre = genre_type
+)
+
+chat <- chat_openrouter(model = "google/gemini-2.5-flash")
+chat$chat_structured(pride_synopsis, type = movie_info_type)
+
+
+
+
+
+## Processing multiple movies
+
+prompts <- paste("Extract data from this movie synopsis:", movies$synopsis)
+
+# parallel_chat_structured is a little different
+output <- parallel_chat_structured(
+  chat = chat_openrouter(model = "google/gemini-2.5-flash"),
+  prompts = as.list(prompts),
+  type = movie_info_type
+)
+
+output
+
+
+
+
+
+## Combining them
+
+movies_with_genres <- bind_cols(movies, output)
+movies_with_genres
+
+## Save to a file
+readr::write_csv("./data/movies_with_genres.csv")
+```
+
+### Your turn
+
+1. Pick a different movie from the dataset
+2. Extract the year and genre using `chat_structured()`
+3. Process all movies using `parallel_chat_structured()`
+4. **Bonus:** Add a new field for the movie's tone using `type_enum()` with choices like "Uplifting", "Dark", "Comedic", "Bittersweet"
+
+## 6 - Tool Calling 
+
+```{r}
+#| eval: false
+#| echo: true
+
+## Initialise a chat and register the tool
+
+prompt <- "You are a movie recommender bot designed to help users 
+pick potential films to add to their watch list. Sample a
+random film and give the user a 20 word summary of it."
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+
+
+
+
+
+## Use the tool!
+
+chat$chat("What movie should I watch this weekend?")
+
+
+
+
+
+## Update the function to filter the data
+
+movie_genres <- c(
+  "Action", "Comedy", "Drama", "Horror",
+  "Science Fiction", "Thriller", "Romance",
+  "Fantasy", "Adventure", "Documentary"
+)
+
+sample_and_filter_movies <- function(genre_choice = movie_genres) {
+  read.csv("data/movies_with_genres.csv") |>
+    filter(genre %in% genre_choice) |>
+    slice_sample(n = 1)  
+}
+
+
+
+
+
+## Define tool using updated function
+
+sample_and_filter_movies_tool <- tool(
+  sample_and_filter_movies,
+  description = "Randomly sample a movie from the dataset",
+  arguments = list(
+    genre_choice = type_array(
+      type_enum(
+        values = movie_genres,
+        "Movie genres to choose from"
+      )
+    )
+  )
+)
+
+
+
+
+
+## Register the updated tool
+
+prompt <- "You are a movie recommender bot designed to help users 
+pick potential films to add to their watch list. Sample a
+random film and give the user a 20 word summary of it. 
+"
+
+chat <- chat_openrouter(
+  model = "google/gemini-2.5-flash",
+  system_prompt = prompt
+)
+
+chat$register_tool(sample_and_filter_movies_tool)
+
+
+
+
+
+## Ask the question
+
+live_console(chat)
+
+# What movie should I watch tonight? I like scifi!
+
+
+```
+
+
+### Your turn
+
+1. Try using the tool and ask different questions and see if you can get them LLM to call it repeatedly

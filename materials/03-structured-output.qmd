@@ -1,9 +1,0 @@
----
-title: "Section 3: Structured Output"
-format: html
-execute:
-  eval: false
-  echo: true
----
-
-TODO: Add content

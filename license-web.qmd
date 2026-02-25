@@ -3,7 +3,7 @@ title: "License"
 editor: source
 ---
 
-Copyright (c) 2025 Nic Crane. All Rights Reserved.
+Copyright (c) 2026 Nic Crane. All Rights Reserved.
 
 This work, including all associated materials, code, documentation, and content, is the proprietary property of Nic Crane.
 

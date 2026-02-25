@@ -1,9 +1,0 @@
----
-title: "Section 2: Prompt Engineering"
-format: html
-execute:
-  eval: false
-  echo: true
----
-
-TODO: Add content

@@ -36,51 +36,16 @@ If you're on a work machine with restrictions on installing software or connecti
 Install the required packages:
 
 ```r
-install.packages(c("ellmer", "mall", "dplyr", "readr", "tidyr", "usethis"))
+install.packages(c("ellmer", "dplyr", "readr", "tidyr", "usethis"))
 ```
 
 #### API keys
 
-You'll need an API key from an LLM provider. We recommend **Gemini** (free), but Anthropic or OpenAI work too if you already have credits.
-
-**Option 1: Gemini (free)**
-
-{{< video https://vimeo.com/1163332672 >}}
-
-1. Go to [Google AI Studio](https://aistudio.google.com/app/apikey)
-2. Sign in with your Google account
-3. Click "Create API key"
-4. Copy the key
-
-**Option 2: Anthropic or OpenAI (paid)**
-
-If you already have an Anthropic or OpenAI account with credits, you can use that instead.
-
-Once you have your key, run `usethis::edit_r_environ()` and save the key as:
-
-```
-GOOGLE_API_KEY=your-key-here
-# OR
-ANTHROPIC_API_KEY=your-key-here
-# OR
-OPENAI_API_KEY=your-key-here
-```
-
-**You will need to restart your R session after saving the environment variable.**
+You'll need an API key from an LLM provider.  You will have been sent this on the day of the workshop.
 
 #### Test setup
 
 After installing packages and setting up your API key, verify everything works:
-
-```r
-library(ellmer)
-
-# Test API connection (restart R first if you just set the key!)
-chat <- chat_google_gemini()  # or chat_anthropic() / chat_openai()
-chat$chat("Say hello in one sentence")
-```
-
-If you see a response from the LLM, you're all set!
 
 ### Workshop Schedule
 
@@ -95,6 +60,13 @@ If you see a response from the LLM, you're all set!
 
 [**Nic Crane**](https://niccrane.com) is an R consultant with a background in data science and software engineering. They are passionate about open source, and learning and teaching all things R.
 
+
+### Code
+
+All the code from the workshop can be found on the [Code and Exercises](code.qmd) page.
+
+
+
 ------------------------------------------------------------------------
 
-Copyright © 2025 Nic Crane. All Rights Reserved.
+Copyright © 2026 Nic Crane. All Rights Reserved.
