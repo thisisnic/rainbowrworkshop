@@ -43,10 +43,6 @@ install.packages(c("ellmer", "dplyr", "readr", "tidyr", "usethis"))
 
 You'll need an API key from an LLM provider.  You will have been sent this on the day of the workshop.
 
-#### Test setup
-
-After installing packages and setting up your API key, verify everything works:
-
 ### Workshop Schedule
 
 - Section 0: Welcome and Setup
@@ -60,11 +56,9 @@ After installing packages and setting up your API key, verify everything works:
 
 [**Nic Crane**](https://niccrane.com) is an R consultant with a background in data science and software engineering. They are passionate about open source, and learning and teaching all things R.
 
-
 ### Code
 
 All the code from the workshop can be found on the [Code and Exercises](code.qmd) page.
-
 
 
 ------------------------------------------------------------------------
