@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-86a2019cc7f7fdb38d0e678c05d61c34.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-01c91d66ee528058603e2b46efea004e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -287,7 +287,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a><span class="do">## Training cutoff date</span></span>
 <span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"what date is it right now?"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"what date is it right now?"</span>)</span>
+<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Are you sure about that?"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="your-turn" class="level3">
 <h3 class="anchored" data-anchor-id="your-turn">Your Turn</h3>
 <ol type="1">
@@ -339,128 +340,129 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> <span class="st">"Respond in 35 words or fewer"</span></span>
 <span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise this movie:"</span>, pride_synopsis)</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"tell me every character and what they do"</span>)</span>
 <span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a><span class="do">## Run it again though...responses vary</span></span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> <span class="st">"Respond in 35 words or fewer"</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise this movie:"</span>, pride_synopsis)</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a><span class="do">## Run it again though...responses vary</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> <span class="st">"Respond in 35 words or fewer"</span></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise this movie:"</span>, pride_synopsis)</span>
 <span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. Define a role - prompt</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer"</span></span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a><span class="co"># if we run it again we get different output</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="do">## 1. Define a role - prompt</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the</span></span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer"</span></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a><span class="co"># if we run it again we get different output</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
 <span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 - Defining the output format - prompt</span></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the </span></span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer</span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a><span class="st">## Output format</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a><span class="st">Plot outline: a 1 sentence description</span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="st">Genre: movie genre</span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="st">Setting: time and place </span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a><span class="do">##  2 - Defining the output format - prompt</span></span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the </span></span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer</span></span>
+<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a><span class="st">## Output format</span></span>
+<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a><span class="st">Plot outline: a 1 sentence description</span></span>
+<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="st">Genre: movie genre</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="st">Setting: time and place </span></span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
 <span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 - Getting more specific - prompt</span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the </span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer</span></span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a><span class="st">## Output format</span></span>
-<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a><span class="st">Plot outline: a 1 sentence description</span></span>
-<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a><span class="st">Genre: movie genre (see choices below)</span></span>
-<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a><span class="st">Setting: time and place </span></span>
-<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a><span class="st">## Choices</span></span>
-<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a><span class="st">Possible movie genres to choose from: Action, Comedy, Drama,  </span></span>
-<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="st">Horror, Science, Fiction, Thriller, Romance, Fantasy, Adventure, Documentary</span></span>
-<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
-<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a><span class="do">## 3 - Getting more specific - prompt</span></span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the </span></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a><span class="st">## Output format</span></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a><span class="st">Plot outline: a 1 sentence description</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a><span class="st">Genre: movie genre (see choices below)</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a><span class="st">Setting: time and place </span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a><span class="st">## Choices</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a><span class="st">Possible movie genres to choose from: Action, Comedy, Drama,  </span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a><span class="st">Horror, Science, Fiction, Thriller, Romance, Fantasy, Adventure, Documentary</span></span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb3-128"><a href="#cb3-128" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb3-129"><a href="#cb3-129" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
+<span id="cb3-130"><a href="#cb3-130" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-131"><a href="#cb3-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-132"><a href="#cb3-132" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span>
 <span id="cb3-133"><a href="#cb3-133" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-134"><a href="#cb3-134" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-135"><a href="#cb3-135" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-136"><a href="#cb3-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 - Iterate - be more strongly worded - prompt</span></span>
-<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the </span></span>
-<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
-<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer</span></span>
-<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a><span class="st">## Output format</span></span>
-<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a><span class="st">Plot outline: a 1 sentence description</span></span>
-<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a><span class="st">Genre: movie genre (see choices below)</span></span>
-<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a><span class="st">Setting: time and place </span></span>
-<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a><span class="st">## Choices</span></span>
-<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a><span class="st">You MUST only choose genres that appear on this list: Action, Comedy, </span></span>
-<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a><span class="st">Drama,  Horror, Science, Fiction, Thriller, Romance, Fantasy, Adventure, </span></span>
-<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a><span class="st">Documentary"</span></span>
-<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-137"><a href="#cb3-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-138"><a href="#cb3-138" aria-hidden="true" tabindex="-1"></a><span class="do">## 4 - Iterate - be more strongly worded - prompt</span></span>
+<span id="cb3-139"><a href="#cb3-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-140"><a href="#cb3-140" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie summariser whose job is to sum up the </span></span>
+<span id="cb3-141"><a href="#cb3-141" aria-hidden="true" tabindex="-1"></a><span class="st">genre and themes of movies to help users decide if they want to watch.</span></span>
+<span id="cb3-142"><a href="#cb3-142" aria-hidden="true" tabindex="-1"></a><span class="st">Respond in 50 words or fewer</span></span>
+<span id="cb3-143"><a href="#cb3-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-144"><a href="#cb3-144" aria-hidden="true" tabindex="-1"></a><span class="st">## Output format</span></span>
+<span id="cb3-145"><a href="#cb3-145" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-146"><a href="#cb3-146" aria-hidden="true" tabindex="-1"></a><span class="st">Plot outline: a 1 sentence description</span></span>
+<span id="cb3-147"><a href="#cb3-147" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-148"><a href="#cb3-148" aria-hidden="true" tabindex="-1"></a><span class="st">Genre: movie genre (see choices below)</span></span>
+<span id="cb3-149"><a href="#cb3-149" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-150"><a href="#cb3-150" aria-hidden="true" tabindex="-1"></a><span class="st">Setting: time and place </span></span>
+<span id="cb3-151"><a href="#cb3-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-152"><a href="#cb3-152" aria-hidden="true" tabindex="-1"></a><span class="st">## Choices</span></span>
+<span id="cb3-153"><a href="#cb3-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-154"><a href="#cb3-154" aria-hidden="true" tabindex="-1"></a><span class="st">You MUST only choose genres that appear on this list: Action, Comedy, </span></span>
+<span id="cb3-155"><a href="#cb3-155" aria-hidden="true" tabindex="-1"></a><span class="st">Drama,  Horror, Science, Fiction, Thriller, Romance, Fantasy, Adventure, </span></span>
+<span id="cb3-156"><a href="#cb3-156" aria-hidden="true" tabindex="-1"></a><span class="st">Documentary"</span></span>
+<span id="cb3-157"><a href="#cb3-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-158"><a href="#cb3-158" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb3-159"><a href="#cb3-159" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb3-160"><a href="#cb3-160" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
+<span id="cb3-161"><a href="#cb3-161" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-162"><a href="#cb3-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-163"><a href="#cb3-163" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Summarise the movie: "</span>, pride_synopsis)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="your-turn-1" class="level3">
 <h3 class="anchored" data-anchor-id="your-turn-1">Your turn</h3>
 <ol type="1">
@@ -527,49 +529,60 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="do">## Extracting text</span></span>
 <span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="do">## Combining multiple fields</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a>location_type <span class="ot">&lt;-</span> <span class="fu">type_array</span>(<span class="fu">type_string</span>(<span class="st">"locations of the movie"</span>))</span>
 <span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>year_type <span class="ot">&lt;-</span> <span class="fu">type_integer</span>(<span class="st">"Year the movie is set in"</span>)</span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>genre_type <span class="ot">&lt;-</span> <span class="fu">type_enum</span>(movie_genres, <span class="st">"The genre of the movie"</span>)</span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(<span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>)</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat_structured</span>(pride_synopsis, <span class="at">type =</span> location_type)</span>
 <span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a>movie_info_type <span class="ot">&lt;-</span> <span class="fu">type_object</span>(</span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a>  <span class="at">year_set =</span> year_type,</span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a>  <span class="at">genre =</span> genre_type</span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(<span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>)</span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat_structured</span>(pride_synopsis, <span class="at">type =</span> movie_info_type)</span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="do">## Combining multiple fields</span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a>year_type <span class="ot">&lt;-</span> <span class="fu">type_integer</span>(<span class="st">"Year the movie is set in"</span>)</span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a>genre_type <span class="ot">&lt;-</span> <span class="fu">type_enum</span>(movie_genres, <span class="st">"The genre of the movie"</span>)</span>
 <span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="do">## Processing multiple movies</span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>movie_info_type <span class="ot">&lt;-</span> <span class="fu">type_object</span>(</span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a>  <span class="at">year_set =</span> year_type,</span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a>  <span class="at">genre =</span> genre_type</span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>prompts <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Extract data from this movie synopsis:"</span>, movies<span class="sc">$</span>synopsis)</span>
-<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="co"># parallel_chat_structured is a little different</span></span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">parallel_chat_structured</span>(</span>
-<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a>  <span class="at">chat =</span> <span class="fu">chat_openrouter</span>(<span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>),</span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>  <span class="at">prompts =</span> <span class="fu">as.list</span>(prompts),</span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> movie_info_type</span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(<span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>)</span>
+<span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat_structured</span>(pride_synopsis, <span class="at">type =</span> movie_info_type)</span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="do">## Processing multiple movies</span></span>
 <span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>output</span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a>prompts <span class="ot">&lt;-</span> <span class="fu">paste</span>(<span class="st">"Extract data from this movie synopsis:"</span>, movies<span class="sc">$</span>synopsis)</span>
 <span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a>prompts</span>
 <span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="do">## Combining them</span></span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>movies_with_genres <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(movies, output)</span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>movies_with_genres</span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="co"># parallel_chat_structured is a little different</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a>output <span class="ot">&lt;-</span> <span class="fu">parallel_chat_structured</span>(</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  <span class="at">chat =</span> <span class="fu">chat_openrouter</span>(<span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>),</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>  <span class="at">prompts =</span> <span class="fu">as.list</span>(prompts),</span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>  <span class="at">type =</span> movie_info_type</span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="do">## Save to a file</span></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(<span class="st">"./data/movies_with_genres.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>output</span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="do">## Combining them</span></span>
+<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a>movies_with_genres <span class="ot">&lt;-</span> <span class="fu">bind_cols</span>(movies, output)</span>
+<span id="cb4-106"><a href="#cb4-106" aria-hidden="true" tabindex="-1"></a>movies_with_genres</span>
+<span id="cb4-107"><a href="#cb4-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-108"><a href="#cb4-108" aria-hidden="true" tabindex="-1"></a><span class="do">## Save to a file</span></span>
+<span id="cb4-109"><a href="#cb4-109" aria-hidden="true" tabindex="-1"></a>readr<span class="sc">::</span><span class="fu">write_csv</span>(<span class="st">"./data/movies_with_genres.csv"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="your-turn-2" class="level3">
 <h3 class="anchored" data-anchor-id="your-turn-2">Your turn</h3>
 <ol type="1">
@@ -582,90 +595,111 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="tool-calling" class="level2">
 <h2 class="anchored" data-anchor-id="tool-calling">6 - Tool Calling</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Initialise a chat and register the tool</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie recommender bot designed to help users </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="st">pick potential films to add to their watch list. Sample a</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="st">random film and give the user a 20 word summary of it."</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define the function</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>sample_movies <span class="ot">&lt;-</span> <span class="cf">function</span>() {</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(<span class="st">"data/movies_with_genres.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">1</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the tool!</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Create tool</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>sample_movies_tool <span class="ot">&lt;-</span> <span class="fu">tool</span>(</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  sample_movies,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"Randomly sample a movie from the dataset"</span></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"What movie should I watch this weekend?"</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="do">## Initialise a chat and register the tool</span></span>
 <span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="do">## Update the function to filter the data</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>movie_genres <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Action"</span>, <span class="st">"Comedy"</span>, <span class="st">"Drama"</span>, <span class="st">"Horror"</span>,</span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Science Fiction"</span>, <span class="st">"Thriller"</span>, <span class="st">"Romance"</span>,</span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fantasy"</span>, <span class="st">"Adventure"</span>, <span class="st">"Documentary"</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie recommender bot designed to help users </span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="st">pick potential films to add to their watch list. Sample a</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="st">random film and give the user a 20 word summary of it."</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
 <span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>sample_and_filter_movies <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">genre_choice =</span> movie_genres) {</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(<span class="st">"data/movies_with_genres.csv"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(genre <span class="sc">%in%</span> genre_choice) <span class="sc">|&gt;</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">1</span>)  </span>
-<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">register_tool</span>(sample_movies_tool)</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a><span class="do">## Use the tool!</span></span>
 <span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"What movie should I watch this weekend?"</span>)</span>
 <span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a><span class="do">## Define tool using updated function</span></span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>sample_and_filter_movies_tool <span class="ot">&lt;-</span> <span class="fu">tool</span>(</span>
-<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>  sample_and_filter_movies,</span>
-<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"Randomly sample a movie from the dataset"</span>,</span>
-<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>  <span class="at">arguments =</span> <span class="fu">list</span>(</span>
-<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="at">genre_choice =</span> <span class="fu">type_array</span>(</span>
-<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>      <span class="fu">type_enum</span>(</span>
-<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>        <span class="at">values =</span> movie_genres,</span>
-<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Movie genres to choose from"</span></span>
-<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>      )</span>
-<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a><span class="do">## Update the function to filter the data</span></span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a>movie_genres <span class="ot">&lt;-</span> <span class="fu">c</span>(</span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Action"</span>, <span class="st">"Comedy"</span>, <span class="st">"Drama"</span>, <span class="st">"Horror"</span>,</span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Science Fiction"</span>, <span class="st">"Thriller"</span>, <span class="st">"Romance"</span>,</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>  <span class="st">"Fantasy"</span>, <span class="st">"Adventure"</span>, <span class="st">"Documentary"</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>sample_and_filter_movies <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">genre_choice =</span> movie_genres) {</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read.csv</span>(<span class="st">"data/movies_with_genres.csv"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    <span class="fu">filter</span>(genre <span class="sc">%in%</span> genre_choice) <span class="sc">|&gt;</span></span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">1</span>)  </span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>}</span>
 <span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a><span class="do">## Register the updated tool</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie recommender bot designed to help users </span></span>
-<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a><span class="st">pick potential films to add to their watch list. Sample a</span></span>
-<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a><span class="st">random film and give the user a 20 word summary of it. </span></span>
-<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
-<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
-<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
-<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
-<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">register_tool</span>(sample_and_filter_movies_tool)</span>
-<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a><span class="do">## Define tool using updated function</span></span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>sample_and_filter_movies_tool <span class="ot">&lt;-</span> <span class="fu">tool</span>(</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>  sample_and_filter_movies,</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a>  <span class="at">description =</span> <span class="st">"Randomly sample a movie from the dataset"</span>,</span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a>  <span class="at">arguments =</span> <span class="fu">list</span>(</span>
+<span id="cb5-69"><a href="#cb5-69" aria-hidden="true" tabindex="-1"></a>    <span class="at">genre_choice =</span> <span class="fu">type_array</span>(</span>
+<span id="cb5-70"><a href="#cb5-70" aria-hidden="true" tabindex="-1"></a>      <span class="fu">type_enum</span>(</span>
+<span id="cb5-71"><a href="#cb5-71" aria-hidden="true" tabindex="-1"></a>        <span class="at">values =</span> movie_genres,</span>
+<span id="cb5-72"><a href="#cb5-72" aria-hidden="true" tabindex="-1"></a>        <span class="st">"Movie genres to choose from"</span></span>
+<span id="cb5-73"><a href="#cb5-73" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb5-74"><a href="#cb5-74" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb5-75"><a href="#cb5-75" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-76"><a href="#cb5-76" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb5-77"><a href="#cb5-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-78"><a href="#cb5-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a><span class="do">## Ask the question</span></span>
+<span id="cb5-79"><a href="#cb5-79" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-80"><a href="#cb5-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a><span class="fu">live_console</span>(chat)</span>
-<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a><span class="co"># What movie should I watch tonight? I like scifi!</span></span>
-<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb5-81"><a href="#cb5-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-82"><a href="#cb5-82" aria-hidden="true" tabindex="-1"></a><span class="do">## Register the updated tool</span></span>
+<span id="cb5-83"><a href="#cb5-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-84"><a href="#cb5-84" aria-hidden="true" tabindex="-1"></a>prompt <span class="ot">&lt;-</span> <span class="st">"You are a movie recommender bot designed to help users </span></span>
+<span id="cb5-85"><a href="#cb5-85" aria-hidden="true" tabindex="-1"></a><span class="st">pick potential films to add to their watch list. Sample a</span></span>
+<span id="cb5-86"><a href="#cb5-86" aria-hidden="true" tabindex="-1"></a><span class="st">random film and give the user a 20 word summary of it. </span></span>
+<span id="cb5-87"><a href="#cb5-87" aria-hidden="true" tabindex="-1"></a><span class="st">"</span></span>
+<span id="cb5-88"><a href="#cb5-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-89"><a href="#cb5-89" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_openrouter</span>(</span>
+<span id="cb5-90"><a href="#cb5-90" aria-hidden="true" tabindex="-1"></a>  <span class="at">model =</span> <span class="st">"google/gemini-2.5-flash"</span>,</span>
+<span id="cb5-91"><a href="#cb5-91" aria-hidden="true" tabindex="-1"></a>  <span class="at">system_prompt =</span> prompt</span>
+<span id="cb5-92"><a href="#cb5-92" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-93"><a href="#cb5-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-94"><a href="#cb5-94" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">register_tool</span>(sample_and_filter_movies_tool)</span>
+<span id="cb5-95"><a href="#cb5-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-96"><a href="#cb5-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-97"><a href="#cb5-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-98"><a href="#cb5-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-99"><a href="#cb5-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-100"><a href="#cb5-100" aria-hidden="true" tabindex="-1"></a><span class="do">## Ask the question</span></span>
+<span id="cb5-101"><a href="#cb5-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-102"><a href="#cb5-102" aria-hidden="true" tabindex="-1"></a><span class="fu">live_console</span>(chat)</span>
+<span id="cb5-103"><a href="#cb5-103" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-104"><a href="#cb5-104" aria-hidden="true" tabindex="-1"></a><span class="co"># What movie should I watch tonight? I like scifi!</span></span>
+<span id="cb5-105"><a href="#cb5-105" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <section id="your-turn-3" class="level3">
 <h3 class="anchored" data-anchor-id="your-turn-3">Your turn</h3>
 <ol type="1">
