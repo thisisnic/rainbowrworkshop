@@ -19,9 +19,10 @@ $navbar-fg: #FFFFFF;
 
 /*-- scss:rules --*/
 
-// Rainbow gradient accent on top of page
+// Rainbow gradient accent on top and bottom of page
 body {
   border-top: 4px solid;
+  border-bottom: 4px solid;
   border-image: linear-gradient(
     to right,
     #E63946,
@@ -78,4 +79,24 @@ h1 {
 
 .callout-note {
   border-left-color: $blue !important;
+}
+
+// RevealJS slides: Logo (QR code) to the top-right
+.reveal .slide-logo {
+  max-height: 100px !important;
+  height: 100px !important;
+  width: auto !important;
+  right: 10px !important;
+  top: 10px !important;
+  left: unset !important;
+  bottom: unset !important;
+}
+
+// Slide numbers at bottom-right
+.slide-number, .reveal.has-logo .slide-number {
+  bottom: 6px !important;
+  right: 10px !important;
+  top: unset !important;
+  color: #777777 !important;
+  left: unset !important;
 }

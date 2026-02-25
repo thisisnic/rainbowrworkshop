@@ -129,6 +129,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link active" href="./index.html" aria-current="page"> 
 <span class="menu-text">Home</span></a>
   </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./code.html"> 
+<span class="menu-text">Code</span></a>
+  </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
@@ -161,6 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#workshop-prework" id="toc-workshop-prework" class="nav-link" data-scroll-target="#workshop-prework">Workshop Prework</a></li>
   <li><a href="#workshop-schedule" id="toc-workshop-schedule" class="nav-link" data-scroll-target="#workshop-schedule">Workshop Schedule</a></li>
   <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#code" id="toc-code" class="nav-link" data-scroll-target="#code">Code</a></li>
   </ul>
 </nav>
     </div>
@@ -212,38 +217,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="packages" class="level4">
 <h4 class="anchored" data-anchor-id="packages">Packages</h4>
 <p>Install the required packages:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ellmer"</span>, <span class="st">"mall"</span>, <span class="st">"dplyr"</span>, <span class="st">"readr"</span>, <span class="st">"tidyr"</span>, <span class="st">"usethis"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"ellmer"</span>, <span class="st">"dplyr"</span>, <span class="st">"readr"</span>, <span class="st">"tidyr"</span>, <span class="st">"usethis"</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="api-keys" class="level4">
 <h4 class="anchored" data-anchor-id="api-keys">API keys</h4>
-<p>You’ll need an API key from an LLM provider. We recommend <strong>Gemini</strong> (free), but Anthropic or OpenAI work too if you already have credits.</p>
-<p><strong>Option 1: Gemini (free)</strong></p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://player.vimeo.com/video/1163332672" frameborder="0" title="" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen=""></iframe></div>
-<ol type="1">
-<li>Go to <a href="https://aistudio.google.com/app/apikey">Google AI Studio</a></li>
-<li>Sign in with your Google account</li>
-<li>Click “Create API key”</li>
-<li>Copy the key</li>
-</ol>
-<p><strong>Option 2: Anthropic or OpenAI (paid)</strong></p>
-<p>If you already have an Anthropic or OpenAI account with credits, you can use that instead.</p>
-<p>Once you have your key, run <code>usethis::edit_r_environ()</code> and save the key as:</p>
-<pre><code>GOOGLE_API_KEY=your-key-here
-# OR
-ANTHROPIC_API_KEY=your-key-here
-# OR
-OPENAI_API_KEY=your-key-here</code></pre>
-<p><strong>You will need to restart your R session after saving the environment variable.</strong></p>
+<p>You’ll need an API key from an LLM provider. You will have been sent this on the day of the workshop.</p>
 </section>
 <section id="test-setup" class="level4">
 <h4 class="anchored" data-anchor-id="test-setup">Test setup</h4>
 <p>After installing packages and setting up your API key, verify everything works:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ellmer)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Test API connection (restart R first if you just set the key!)</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>chat <span class="ot">&lt;-</span> <span class="fu">chat_google_gemini</span>()  <span class="co"># or chat_anthropic() / chat_openai()</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>chat<span class="sc">$</span><span class="fu">chat</span>(<span class="st">"Say hello in one sentence"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<p>If you see a response from the LLM, you’re all set!</p>
 </section>
 </section>
 <section id="workshop-schedule" class="level3">
@@ -260,8 +242,12 @@ OPENAI_API_KEY=your-key-here</code></pre>
 <section id="instructor" class="level3">
 <h3 class="anchored" data-anchor-id="instructor">Instructor</h3>
 <p><a href="https://niccrane.com"><strong>Nic Crane</strong></a> is an R consultant with a background in data science and software engineering. They are passionate about open source, and learning and teaching all things R.</p>
+</section>
+<section id="code" class="level3">
+<h3 class="anchored" data-anchor-id="code">Code</h3>
+<p>All the code from the workshop can be found on the <a href="./code.html">Code and Exercises</a> page.</p>
 <hr>
-<p>Copyright © 2025 Nic Crane. All Rights Reserved.</p>
+<p>Copyright © 2026 Nic Crane. All Rights Reserved.</p>
 
 
 </section>
