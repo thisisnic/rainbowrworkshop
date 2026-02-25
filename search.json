@@ -11,7 +11,7 @@
     "href": "code.html",
     "title": "Code",
     "section": "",
-    "text": "If you are not working in Posit Cloud, or you do not have the data/ directory showoing up in Posit Cloud, you can download them by running:\n# Download workshop materials (slides + data)\ndownload.file(\n\n  url = \"https://tinyurl.com/rainbowrllms\",\n  destfile = \"workshop-materials.zip\"\n)\n\n# Unzip and move contents to root\nunzip(\"workshop-materials.zip\")\nfile.copy(\n  list.files(\"rainbowrworkshop-materials\", full.names = TRUE),\n   \".\", recursive = TRUE)\nunlink(\"rainbowrworkshop-materials\", recursive = TRUE)"
+    "text": "If you are not working in Posit Cloud, or you do not have the data/ directory showing up in Posit Cloud, you can download them by running:\n# Download workshop materials (slides + data)\ndownload.file(\n\n  url = \"https://tinyurl.com/rainbowrllms\",\n  destfile = \"workshop-materials.zip\"\n)\n\n# Unzip and move contents to root\nunzip(\"workshop-materials.zip\")\nfile.copy(\n  list.files(\"rainbowrworkshop-materials\", full.names = TRUE),\n   \".\", recursive = TRUE)\nunlink(\"rainbowrworkshop-materials\", recursive = TRUE)"
   },
   {
     "objectID": "code.html#getting-started-with-llms-in-r",
