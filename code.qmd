@@ -3,6 +3,26 @@ title: Code
 subtitle: rainbowR Conference Workshop
 ---
 
+# Setup
+
+If you are not working in Posit Cloud, or you do not have the `data/` directory showoing up in Posit Cloud, you can download them by running:
+
+```r
+# Download workshop materials (slides + data)
+download.file(
+
+  url = "https://tinyurl.com/rainbowrllms",
+  destfile = "workshop-materials.zip"
+)
+
+# Unzip and move contents to root
+unzip("workshop-materials.zip")
+file.copy(
+  list.files("rainbowrworkshop-materials", full.names = TRUE),
+   ".", recursive = TRUE)
+unlink("rainbowrworkshop-materials", recursive = TRUE)
+```
+
 # Code
 
 All the code and exercises for the workshop can be found below.
